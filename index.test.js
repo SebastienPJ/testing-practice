@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from './index'
+import { capitalize, reverseString, calculator, caesarCipher } from './index'
 
 
 /***** Capitalize Tests *****/
@@ -50,3 +50,20 @@ test('Divide', () => {
   expect(calculator.divide(12,4)).toBe(3)
 });
 
+
+
+/***** Caesar Cipher Tests *****/
+test('Simple Shift', () => {
+  expect(caesarCipher('love', 5)).toBe('qtaj')
+});
+
+test('Punctuations', () => {
+  expect(caesarCipher('love!', 5)).toBe('qtaj!')
+});
+
+test('Spaces', () => {
+  expect(caesarCipher('i love books', 23)).toBe('f ilsb yllhp')
+})
+
+// need to test capital letters
+//need to test very large offsets ex: 5002
