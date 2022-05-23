@@ -80,11 +80,6 @@ function isCapitalCase(char) {
   return char === char.toUpperCase()
 }
 
-function isLowerCase (charac) {
-  return charac === charac.toLowerCase()
-}
-
-
 function caesarCipher(string, offsetNumber) {
   let endString = '';
 
