@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, caesarCipher } from './index'
+import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from './index'
 
 
 /***** Capitalize Tests *****/
@@ -72,3 +72,33 @@ test('z to a wrapping', () => {
 test('Keep same case', () => {
   expect(caesarCipher('Sunny', 5)).toBe('Xzssd')
 });
+
+
+/***** Analyze Array Tests *****/
+test('Average', () => {
+  expect(analyzeArray([2,3,4])).toEqual(
+      expect.objectContaining({'average': 3})
+  )
+})
+
+test('Average with floats', () => {
+  const obj = analyzeArray([3,4,6])
+  expect(obj['average']).toBeCloseTo(4.3333)
+})
+
+test('Length', () => {
+  const object = analyzeArray([2,5,6])
+  expect(object['length']).toBe(3)
+})
+
+
+test('Min', () => {
+  const obj = analyzeArray([1,4,-4,6])
+  expect(obj['min']).toBe(-4)
+})
+
+test('Max', () => {
+  expect(analyzeArray([3,6,9,1])).toEqual(
+    expect.objectContaining({'max': 9})
+  )
+})

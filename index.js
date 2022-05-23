@@ -111,6 +111,38 @@ function caesarCipher(string, offsetNumber) {
 
 
 
+function getAverage(arr) {
+  const sum = arr.reduce((acc, curr) => {
+    return acc + curr
+  }, 0)
+
+  return sum / arr.length
+}
+
+
+function getMin(arr) {
+  return arr.reduce((acc, curr) => {
+    return (acc < curr ? acc : curr)
+  })
+}
+
+function getMax(arr) {
+  return arr.reduce((acc, curr) => {
+    return (acc < curr ? curr : acc)
+  })
+}
+
+
+function analyzeArray(array) {
+  return {
+    'average': getAverage(array),
+    'length': array.length,
+    'min': getMin(array),
+    'max': getMax(array)
+    
+    
+  }
+}
 
 
 
@@ -118,7 +150,12 @@ function caesarCipher(string, offsetNumber) {
 
 
 
-export { capitalize, reverseString, calculator, caesarCipher };
+
+
+
+
+
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
 
 
 
