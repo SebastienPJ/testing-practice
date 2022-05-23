@@ -63,7 +63,12 @@ test('Punctuations', () => {
 
 test('Spaces', () => {
   expect(caesarCipher('i love books', 23)).toBe('f ilsb yllhp')
-})
+});
 
-// need to test capital letters
-//need to test very large offsets ex: 5002
+test('z to a wrapping', () => {
+  expect(caesarCipher('zebra', 11)). toBe('kpmcl')
+});
+
+test('Keep same case', () => {
+  expect(caesarCipher('Sunny', 5)).toBe('Xzssd')
+});

@@ -76,15 +76,31 @@ function isLetter(character) {
   return character.toUpperCase() !== character.toLowerCase()
 };
 
+function isCapitalCase(char) {
+  return char === char.toUpperCase()
+}
+
+function isLowerCase (charac) {
+  return charac === charac.toLowerCase()
+}
+
+
 function caesarCipher(string, offsetNumber) {
   let endString = '';
 
   [...string].forEach(char => {
+    let isCapital = isCapitalCase(char)
+
     if (isLetter(char)) {
-      let currentIndex = getCurrentLetterIndex(char);
+      let charLowerCase = char.toLowerCase()
+
+      let currentIndex = getCurrentLetterIndex(charLowerCase);
       let indexAferShift = getNewLetterIndex(currentIndex,offsetNumber);
       let newChar = alphabet[indexAferShift];
-      endString += newChar;
+
+      isCapital ? endString += newChar.toUpperCase() : endString += newChar;
+
+   
     } else {
       endString += char
     }
